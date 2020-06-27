@@ -104,6 +104,13 @@ ds = tf.data.Dataset.from_generator(iteration, 'float32')
 for i in ds:
     print(i.numpy())
 
+    
+#def data_generator_func(): #some arbit generator function
+#    yield ((story, question), answer) # ([ndarray, ndarray], ndarray)
+#ds = tf.data.Dataset.from_generator(data_generator_func,
+#                                              ((tf.int64, tf.int64), tf.int64),
+#                                              ((tf.TensorShape([12,6]), tf.TensorShape([6])), tf.TensorShape([1]))  )
+
 #%%
 ds = tf.data.Dataset.from_tensor_slices(list(range(10)))
 ds = ds.window(4, 1, 1)
